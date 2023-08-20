@@ -21,6 +21,7 @@ for i in $number ; do
         $work_dir/structure.xyz
     sed -e "s/O2-/O/g" \
         $work_dir/structure.xyz
+    cp  $input_file $work_dir
     cp  $input_dir/$short $work_dir
     cp  $input_dir/$std $work_dir
 
