@@ -1,0 +1,31 @@
+#!/bin/bash
+
+number="-30 -20 -10 0 10 20 30 40 50 60"
+
+template_file=GaO_temp.inp
+input_file=GaO.inp
+short=short_2.pbs
+short2=short_re.pbs
+std=std_2.pbs
+wfn_file=GaO-RESTART.wfn
+XYZ_bash_dir=/work/e05/e05/ucapcka/Charge/bin/cif2xyz.sh
+input_dir=/work/e05/e05/ucapcka/Ov-a-Ga2O3/Ov_CN2/O_temp
+
+for i in $number ; do
+    work_dir=Bond_Distortion_${i}.0%
+    cd "$work_dir"
+       /usr/bin/sbatch $short2
+      rm *0.cube
+      rm *1.cube
+      rm *2.cube
+      rm *3.cube
+      rm *4.cube
+      rm *5.cube
+      rm *6.cube
+      rm *7.cube
+      rm *8.cube
+      rm *9.cube
+      rm *bak*
+
+    cd ..
+done
