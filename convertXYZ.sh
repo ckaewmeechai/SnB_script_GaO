@@ -14,7 +14,6 @@ input_dir=/work/e05/e05/ucapcka/Ov-a-Ga2O3/Ov_CN2/O_temp
 for i in $number ; do
     work_dir=Bond_Distortion_${i}.0%
 
-    wfn_dir=/work/e05/e05/ucapcka/Ov-a-Ga2O3$name_dir
     line=${i}
     $XYZ_bash_dir/cif2xyz.sh $work_dir/structure.cif
     sed -e "s/Ga3+/Ga/g" \
